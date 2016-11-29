@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Groep R - Bram Valstar / Zowie van Geest</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link href="assets/css/style.min.css" rel="stylesheet" type="text/css">
+    <script src="assets/js/aframe-v0.3.2.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+<div id="overlay" class="overlay">
+    <h1 class="overlay-title">Alle kippen zijn verslagen!</h1>
+</div>
+<a-scene>
+    <a-assets>
+        <img id="floor" src="assets/img/textures/laminaat.jpg">
+        <img id="wallpaper1" src="assets/img/textures/wallpaper1.jpg">
+        <img id="topWallTexture" src="assets/img/textures/texture-top.png">
+        <img id="wood-wall-texture" src="assets/img/textures/wood-wall.jpg">
+    </a-assets>
+
+
+    <a-camera camera="" position="" rotation="" look-controls="" wasd-controls="" scale="" visible="">
+
+        <a-cursor color="white" material="" raycaster="" cursor="" geometry="" position="" rotation="" scale="" visible=""></a-cursor>
+    </a-camera>
+
+    <a-entity id="floor" position="0 0 0" rotation="0 0 0" geometry="height:0.5;depth:40;width:40"
+              material="src: #floor; repeat: 40 40"></a-entity>
+
+    <a-entity id="walls">
+        <a-entity id="wallLeft" position="-6 2.5 0" rotation="0 90 0" scale="1 1 1" visible="true" geometry="primitive:box;height:5;depth:0.2;width:12" material="src: #wallpaper1; repeat: 1 1"></a-entity>
+        <a-entity id="wallRight" position="6 2.5 0" rotation="0 90 0" scale="1 1 1" visible="true" geometry="primitive:box;height:5;depth:0.2;width:12" material="src: #wallpaper1; repeat: 1 1"></a-entity>
+        <a-entity id="wallRight" position="6 2.5 0" rotation="0 90 0" scale="1 1 1" visible="true" geometry="primitive:box;height:5;depth:0.2;width:12" material="src: #wallpaper1; repeat: 1 1"></a-entity>
+        <a-entity id="wallFront" position="0 2.5 -6" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:box;height:5;depth:0.2;width:12" material="src: #wallpaper1; repeat: 1 1"></a-entity>
+        <a-entity id="wallBack" position="0 2.5 6" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:box;height:5;depth:0.2;width:12" material="src: #wallpaper1; repeat: 1 1"></a-entity>
+    </a-entity>
+
+    <a-obj-model id="table_model" src="assets/img/models/model_table/m1.obj" mtl="assets/img/models/model_table/m1.mtl" scale="1.5 1.5 1.5" position="-0.24 0.25 1.29" material="roughness:1"
+                 obj-model="obj:url(assets/img/models/model_table/m1.obj);mtl:url(assets/img/models/model_table/m1.mtl)" rotation="0 0 0"></a-obj-model>
+    <a-entity id=""
+
+    <a-sky id="sky" color="#73d8ed"></a-sky>
+</a-scene>
+</body>
+</html>
