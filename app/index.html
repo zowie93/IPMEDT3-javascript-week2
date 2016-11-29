@@ -19,6 +19,7 @@
         <img id="wallpaper2" src="assets/img/textures/wallpaper2.jpg">
         <img id="wallpaper3" src="assets/img/textures/wallpaper3.jpg">
         <img id="tableplate" src="assets/img/textures/table-plate.jpg">
+        <img id="rooftexture" src="assets/img/textures/roof.jpg">
     </a-assets>
 
 
@@ -31,7 +32,7 @@
               material="src: #floor; repeat: 40 40">
     </a-entity>
 
-    <a-entity id="roof" position="0.16 5.05 -0.06" rotation="0 0 0" geometry="primitive:box;height:0.01;depth:13;width:13"></a-entity>
+    <a-entity id="roof" position="0.16 5.05 -0.06" rotation="0 0 0" geometry="primitive:box;height:0.01;depth:13;width:13" material="src: #rooftexture; repeat: 2 2"></a-entity>
 
     <a-entity id="walls">
         <a-entity id="wallLeft" position="-6 2.5 0" rotation="0 90 0" scale="1 1 1" visible="true" geometry="primitive:box;height:5;depth:0.2;width:12" material="src: #wallpaper1; repeat: 1 1"></a-entity>
