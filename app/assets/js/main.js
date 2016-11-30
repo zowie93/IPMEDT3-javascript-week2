@@ -1,24 +1,10 @@
 $(document).ready(function () {
 
     // behang muren
-    var wallLeft = $('#wallLeft');
-    var wallRight = $('#wallRight');
-    var wallFront = $('#wallFront');
-    var wallBack = $('#wallBack');
+    var walltexture = $('.walltexture');
 
     // bank onderdelen
-    var couchpart1 = $('#couchp1');
-    var couchpart2 = $('#couchp2');
-    var couchpart3 = $('#couchp3');
-    var couchpart4 = $('#couchp4');
-    var couchpart5 = $('#couchp5');
-    var couchpart6 = $('#couchp6');
-    var couchpart7 = $('#couchp7');
-    var couchpart8 = $('#couchp8');
-    var couchpart9 = $('#couchp9');
-    var couchpart10 = $('#couchp10');
-    var couchpart11 = $('#couchp11');
-    var couchpart12 = $('#couchp12');
+    var couchtexture = $('.couchtexture');
 
 
     // texture muren vakjes
@@ -32,30 +18,19 @@ $(document).ready(function () {
     var ct3 = document.getElementById('ct3');
 
     // textures toevoegen aan de muren
-    addTexture(wp1, '#wallpaper1', wallLeft, wallRight, wallFront, wallBack);
-    addTexture(wp2, '#wallpaper2', wallLeft, wallRight, wallFront, wallBack);
-    addTexture(wp3, '#wallpaper3', wallLeft, wallRight, wallFront, wallBack);
+    addTexture(wp1, '#wallpaper1', walltexture);
+    addTexture(wp2, '#wallpaper2', walltexture);
+    addTexture(wp3, '#wallpaper3', walltexture);
 
     // texures toevegen aan de banken
-    addTexture(ct1, '#couchtexture1', couchpart1, couchpart2, couchpart3, couchpart4);
-    addTexture(ct2, '#couchtexture2', couchpart1, couchpart2, couchpart3, couchpart4);
-    addTexture(ct3, '#couchtexture3', couchpart1, couchpart2, couchpart3, couchpart4);
-
-    addTexture(ct1, '#couchtexture1', couchpart5, couchpart6, couchpart7, couchpart8);
-    addTexture(ct2, '#couchtexture2', couchpart5, couchpart6, couchpart7, couchpart8);
-    addTexture(ct3, '#couchtexture3', couchpart5, couchpart6, couchpart7, couchpart8);
-
-    addTexture(ct1, '#couchtexture1', couchpart9, couchpart10, couchpart11, couchpart12);
-    addTexture(ct2, '#couchtexture2', couchpart9, couchpart10, couchpart11, couchpart12);
-    addTexture(ct3, '#couchtexture3', couchpart9, couchpart10, couchpart11, couchpart12);
+    addTexture(ct1, '#couchtexture1', couchtexture);
+    addTexture(ct2, '#couchtexture2', couchtexture);
+    addTexture(ct3, '#couchtexture3', couchtexture);
 
     // functie voor texture toevoegen op mouseenter
-    function addTexture(id, texture, mat1, mat2, mat3, mat4) {
+    function addTexture(id, texture, mat1 ) {
         id.addEventListener('mouseenter', function () {
             mat1.attr('material', 'src :' + texture + '');
-            mat2.attr('material', 'src :' + texture + '');
-            mat3.attr('material', 'src :' + texture + '');
-            mat4.attr('material', 'src :' + texture + '');
         });
     }
 
