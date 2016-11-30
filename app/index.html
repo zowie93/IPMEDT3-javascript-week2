@@ -15,26 +15,35 @@
 </div>
 <a-scene>
     <a-assets>
+        <!--vloer texture-->
         <img id="floor" src="assets/img/textures/laminaat.jpg">
+        <!--textures behang-->
         <img id="wallpaper1" src="assets/img/textures/wallpaper1.jpg">
         <img id="wallpaper2" src="assets/img/textures/wallpaper2.jpg">
         <img id="wallpaper3" src="assets/img/textures/wallpaper3.jpg">
+        <!--bank texture-->
+        <img id="couchtexture1" src="assets/img/textures/leather-texture.jpg">
+        <img id="couchtexture2" src="assets/img/textures/leather2-texture.jpg">
+        <img id="couchtexture3" src="assets/img/textures/leather3-texture.jpg">
+        <!--tafel texture-->
         <img id="tableplate" src="assets/img/textures/table-plate.jpg">
         <img id="rooftexture" src="assets/img/textures/roof.jpg">
     </a-assets>
 
-
+    <!--added camera-->
     <a-camera camera="" position="" rotation="" look-controls="" wasd-controls="" scale="" visible="">
-
         <a-cursor color="white" material="" raycaster="" cursor="" geometry="" position="" rotation="" scale="" visible=""></a-cursor>
     </a-camera>
 
+    <!--floor component-->
     <a-entity id="floor" position="0 0 0" rotation="0 0 0" geometry="height:0.5;depth:40;width:40"
               material="src: #floor; repeat: 40 40">
     </a-entity>
 
+    <!--roof component-->
     <a-entity id="roof" position="0.16 5.05 -0.06" rotation="0 0 0" geometry="primitive:box;height:0.01;depth:13;width:13" material="src: #rooftexture; repeat: 2 2"></a-entity>
 
+    <!--wrapper for the walls-->
     <a-entity id="walls">
         <a-entity id="wallLeft" position="-6 2.5 0" rotation="0 90 0" scale="1 1 1" visible="true" geometry="primitive:box;height:5;depth:0.2;width:12" material="src: #wallpaper1; repeat: 1 1"></a-entity>
         <a-entity id="wallRight" position="6 2.5 0" rotation="0 90 0" scale="1 1 1" visible="true" geometry="primitive:box;height:5;depth:0.2;width:12" material="src: #wallpaper1; repeat: 1 1"></a-entity>
@@ -42,25 +51,58 @@
         <a-entity id="wallBack" position="0 2.5 6" rotation="0 0 0" scale="1 1 1" visible="true" geometry="primitive:box;height:5;depth:0.2;width:12" material="src: #wallpaper1; repeat: 1 1"></a-entity>
     </a-entity>
 
-    <a-entity id="table">
-        <a-obj-model id="table_model" src="assets/img/models/model_table/m1.obj" mtl="assets/img/models/model_table/m1.mtl" scale="1.5 1.5 1.5" position="0.05 0.25 1.03" material="roughness:1" obj-model="obj:url(assets/img/models/model_table/m1.obj);mtl:url(assets/img/models/model_table/m1.mtl)" rotation="0 0 0"></a-obj-model>
-        <a-entity id="tablePlate" position="0.04 0.92 1.04" geometry="depth:0.9;height:0.01;width:1.6" material="src:#tableplate;repeat:1 1"></a-entity>
+    <!--table wrapper with texture-->
+    <a-entity id="table-wrapper-behang">
+        <a-entity id="table">
+            <a-obj-model id="table_model" src="assets/img/models/model_table/m1.obj" mtl="assets/img/models/model_table/m1.mtl" scale="1.5 1.5 1.5" position="0.05 0.25 1.03" material="roughness:1" obj-model="obj:url(assets/img/models/model_table/m1.obj);mtl:url(assets/img/models/model_table/m1.mtl)" rotation="0 0 0"></a-obj-model>
+            <a-entity id="tablePlate" position="0.04 0.92 1.04" geometry="depth:0.9;height:0.01;width:1.6" material="src:#tableplate;repeat:1 1"></a-entity>
+        </a-entity>
+
+        <a-entity id="wallpaperPicker">
+            <a-entity id="wp1" position="0.45 1.1 0.95" rotation="30 0 0" geometry="depth:0.01;height:0.3;width:0.3" material="src: #wallpaper1; repeat: 1 1"></a-entity>
+            <a-entity id="wp2" position="0.03 1.1 0.95" rotation="30 0 0" geometry="depth:0.01;height:0.3;width:0.3" material="src: #wallpaper2; repeat: 1 1"></a-entity>
+            <a-entity id="wp3" position="-0.39 1.1 0.95" rotation="30 0 0" geometry="depth:0.01;height:0.3;width:0.3" material="src: #wallpaper3; repeat: 1 1"></a-entity>
+        </a-entity>
     </a-entity>
 
-    <a-entity id="wallpaperPicker">
-        <a-entity id="wp1" position="0.45 1.1 0.95" rotation="30 0 0" geometry="depth:0.01;height:0.3;width:0.3" material="src: #wallpaper1; repeat: 1 1"></a-entity>
-        <a-entity id="wp2" position="0.03 1.1 0.95" rotation="30 0 0" geometry="depth:0.01;height:0.3;width:0.3" material="src: #wallpaper2; repeat: 1 1"></a-entity>
-        <a-entity id="wp3" position="-0.39 1.1 0.95" rotation="30 0 0" geometry="depth:0.01;height:0.3;width:0.3" material="src: #wallpaper3; repeat: 1 1"></a-entity>
+    <!--table wrapper for couchtexture-->
+    <a-entity id="table-wrapper-couch" position="0.11 0 0" rotation="0 -179.9087476710785 0">
+        <a-entity id="table">
+            <a-obj-model id="table_model_2" src="assets/img/models/model_table/m1.obj" mtl="assets/img/models/model_table/m1.mtl" scale="1.5 1.5 1.5" position="0.05 0.25 1.03" material="roughness:1" obj-model="obj:url(assets/img/models/model_table/m1.obj);mtl:url(assets/img/models/model_table/m1.mtl)" rotation="0 0 0"></a-obj-model>
+            <a-entity id="tablePlate2" position="0.04 0.92 1.04" geometry="depth:0.9;height:0.01;width:1.6" material="src:#tableplate;repeat:1 1"></a-entity>
+        </a-entity>
+
+        <a-entity id="couchTexturePicker">
+            <a-entity id="ct1" position="0.45 1.1 0.95" rotation="30 0 0" geometry="depth:0.01;height:0.3;width:0.3" material="src: #couchtexture1; repeat: 1 1"></a-entity>
+            <a-entity id="ct2" position="0.03 1.1 0.95" rotation="30 0 0" geometry="depth:0.01;height:0.3;width:0.3" material="src: #couchtexture2; repeat: 1 1"></a-entity>
+            <a-entity id="ct3" position="-0.39 1.1 0.95" rotation="30 0 0" geometry="depth:0.01;height:0.3;width:0.3" material="src: #couchtexture3; repeat: 1 1"></a-entity>
+        </a-entity>
     </a-entity>
 
-    <a-entity id="couch" position="0 0 -3.8" scale="1.77 1.18 1">
-        <a-entity id="couchp1" position="0 0.43 -1.46" geometry="depth:0.679;height:0.4;width:1.64"></a-entity>
-        <a-entity id="couchp2" position="0 0.64 -1.95" geometry="width:1.64;depth:0.3;height:0.8"></a-entity>
-        <a-entity id="couchp3" position="-0.86 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2"></a-entity>
-        <a-entity id="couchp4" position="0.83 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2"></a-entity>
+    <!--couch texture-->
+    <a-entity id="couch" position="-3.85 0 -3.8" scale="1.77 1.18 1">
+        <a-entity id="couchp1" position="0 0.43 -1.46" geometry="depth:0.679;height:0.4;width:1.64" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+        <a-entity id="couchp2" position="0 0.64 -1.95" geometry="width:1.64;depth:0.3;height:0.8" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+        <a-entity id="couchp3" position="-0.86 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+        <a-entity id="couchp4" position="0.83 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+    </a-entity>
+
+    <a-entity id="couch2" position="0 0 -3.8" scale="1.77 1.18 1">
+        <a-entity id="couchp5" position="0 0.43 -1.46" geometry="depth:0.679;height:0.4;width:1.64" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+        <a-entity id="couchp6" position="0 0.64 -1.95" geometry="width:1.64;depth:0.3;height:0.8" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+        <a-entity id="couchp7" position="-0.86 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+        <a-entity id="couchp8" position="0.83 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+    </a-entity>
+
+    <a-entity id="couch3" position="3.8 0 -3.8" scale="1.77 1.18 1">
+        <a-entity id="couchp9" position="0 0.43 -1.46" geometry="depth:0.679;height:0.4;width:1.64" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+        <a-entity id="couchp10" position="0 0.64 -1.95" geometry="width:1.64;depth:0.3;height:0.8" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+        <a-entity id="couchp11" position="-0.86 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity>
+        <a-entity id="couchp12" position="0.83 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity>
     </a-entity>
 
     <a-sky id="sky" color="#73d8ed"></a-sky>
+
 </a-scene>
 </body>
 </html>
