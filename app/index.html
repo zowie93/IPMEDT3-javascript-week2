@@ -28,11 +28,13 @@
         <!--tafel texture-->
         <img id="tableplate" src="assets/img/textures/table-plate.jpg">
         <img id="rooftexture" src="assets/img/textures/roof.jpg">
+        <img id="carpet" src="assets/img/textures/carpet.jpg">
     </a-assets>
 
     <!--added camera-->
-    <a-camera camera="" position="" rotation="" look-controls="" wasd-controls="" scale="" visible="">
-        <a-cursor color="white" material="" raycaster="" cursor="" geometry="" position="" rotation="" scale="" visible=""></a-cursor>
+    <a-camera id="camera" camera="" position="" rotation="" look-controls="" wasd-controls="" scale="" visible="">
+        <a-cursor id="cursor" color="white" material="" raycaster="" cursor="" geometry="" position="" rotation="" scale="" visible=""></a-cursor>
+
     </a-camera>
 
     <!--floor component-->
@@ -100,6 +102,10 @@
         <a-entity id="couchp11" class="couchtexture" position="-0.86 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity>
         <a-entity id="couchp12" class="couchtexture" position="0.83 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity>
     </a-entity>
+
+    <!--drop points aanmaken voor de banken-->
+    <a-entity id="dropvlak1" position="-5.39 -0.22 0" geometry="depth:4.3" material="src: #carpet; repeat: 1 6"></a-entity>
+    <a-entity id="dropvlak2" position="5.45 -0.22 0.07" rotation="0 180 0" scale="1 1 1" visible="true" geometry="depth:4.3" material="src: #carpet; repeat: 1 6"></a-entity>
 
     <a-sky id="sky" color="#73d8ed"></a-sky>
 
