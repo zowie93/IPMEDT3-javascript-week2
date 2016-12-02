@@ -61,22 +61,16 @@ $(document).ready(function () {
     }
 
     //aanmaken droppen bank + functie
-    dropBank(drop1);
-    dropBank(drop2);
+    dropBank(drop1, "#couch4");
+    dropBank(drop2, "#couch5");
 
     //functie voor droppen bank
-    function dropBank(drop1) {
+    function dropBank(drop1, id) {
         drop1.addEventListener('mouseenter', function () {
             $(couchCursor).remove();
-            $("#couch4").attr('visibile', 'true');
+            $(id).attr('visible', 'true');
         });
     }
 
-    function dropBank(drop2) {
-        drop2.addEventListener('mouseenter', function () {
-            $(couchCursor).remove();
-            $("#couch4").attr('visibile', 'true');
-        });
-    }
 
 });
