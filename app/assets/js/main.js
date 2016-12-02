@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    $("#couch4").attr('visible', 'false');
+    $("#couch5").attr('visible', 'false');
     //variabele voor cursor en camera
     var cursor = document.getElementById("cursor");
     var camera = document.getElementById("camera");
@@ -52,9 +54,9 @@ $(document).ready(function () {
     //functie voor oppakken bank
     function takeBank(id) {
         id.addEventListener('mouseenter', function () {
-            //hieronder staat code waarbij in de cursor nu een box komt, dit moet de bank zelf worden
-            $(cursor).append("<a-entity id='bankRepresentation' position='0 -0.2 -0.03' geometry='depth:0.2;height:0.2;width:0.2'></a-entity>");
-            $(id).remove();
+
+            $(cursor).append('<a-entity id="couchCursor" position="0 0 -1" scale="1.77 1.18 1"><a-entity id="couchp1" class="couchtexture" position="0 0.43 -1.46" geometry="depth:0.679;height:0.4;width:1.64" material="src: #couchtexture1; repeat: 3 1"></a-entity><a-entity id="couchp2" class="couchtexture" position="0 0.64 -1.95" geometry="width:1.64;depth:0.3;height:0.8" material="src: #couchtexture1; repeat: 3 1"></a-entity><a-entity id="couchp3" class="couchtexture" position="-0.86 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity><a-entity id="couchp4" class="couchtexture" position="0.83 0.73 -1.57" geometry="depth:0.9;height:0.2;width:0.2" material="src: #couchtexture1; repeat: 3 1"></a-entity></a-entity>');
+            $(id).attr('visible', 'false');
         });
     }
 
@@ -63,10 +65,17 @@ $(document).ready(function () {
     dropBank(drop2);
 
     //functie voor droppen bank
-    function dropBank(id) {
-        id.addEventListener('mouseenter', function () {
-            $(bankRepresentation).remove();
-            //hier moet nog code komen om bank weer neer te zetten
+    function dropBank(drop1) {
+        drop1.addEventListener('mouseenter', function () {
+            $(couchCursor).remove();
+            $("#couch4").attr('visibile', 'true');
+        });
+    }
+
+    function dropBank(drop2) {
+        drop2.addEventListener('mouseenter', function () {
+            $(couchCursor).remove();
+            $("#couch4").attr('visibile', 'true');
         });
     }
 
